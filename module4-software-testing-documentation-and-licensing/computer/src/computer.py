@@ -1,3 +1,4 @@
+import joblib
 from datetime import datetime
 
 class Computer:
@@ -22,3 +23,6 @@ class Computer:
 
   def is_portable(self):
     raise NotImplementedError('is_portable() not implemented. Computer is a parent class')
+
+  def save_to_disk(self, obj_index):
+  	joblib.dump(self, f"saved_computer_{obj_index}")
